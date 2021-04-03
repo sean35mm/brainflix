@@ -6,7 +6,7 @@ const Comments = () => {
   
     return (
     <div>
-      <h3 className="xx"> {this.props.commentsNumber} Comments</h3>  
+      <h3 className="xx"> 3 Comments</h3>  
         <form className="xx" name="commentForm">
           <img className="xx" src={Mohan} alt="mohan"/>
           <ul className="xx">
