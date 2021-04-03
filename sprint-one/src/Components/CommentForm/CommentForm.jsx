@@ -2,8 +2,8 @@ import React from 'react';
 import Mohan from '../../Assets/Images/Mohan-muruge.jpg';
 
 
-class Comments extends React.Component {
-  render() {
+const Comments = () => {
+  
     return (
     <div>
       <h3 className="xx"> {this.props.commentsNumber} Comments</h3>  
@@ -21,7 +21,7 @@ class Comments extends React.Component {
         </form>
     </div>
     )
-  }
+  
   
 }
 
