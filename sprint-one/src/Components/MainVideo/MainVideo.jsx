@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './MainVideo.scss';
 
 const MainVideo = ({CurrentVideo}) => {
     return (
-      <div>
-        <video controls poster={CurrentVideo.image}></video>
+      <div className="video">
+        <div className="video__container">
+          <video className="video__hero" controls poster={CurrentVideo.image}></video>
+        </div>
       </div>
     )
-
   }
   
 

@@ -1,0 +1,96 @@
+@import "../../Partials/variables";
+@import "../../Partials/mixins";
+
+.video-builder {
+	width: 100%;
+	height: auto;
+	@include tablet {
+		width: 88.5%;
+	}
+	@include desktop {
+		border-left: solid 1px $verylightgray;
+	}
+	&__border {
+		border-top: 1px solid $verylightgray;
+		width: 90%;
+		margin-left: 5%;
+		@include tablet {
+			width: 100%;
+			margin-left: 5%;
+		}
+	}
+	&__section-title {
+		color: $gray;
+		font-size: 0.8rem;
+		font-weight: 600;
+		margin: 12% 0 12% 5%;
+		@include tablet {
+			margin: 5%;
+		}
+		@include desktop {
+			font-size: 0.73rem;
+		}
+	}
+	&__container {
+		display: flex;
+		margin-bottom: 6%;
+		text-decoration: none;
+		@include tablet {
+			margin-bottom: 2%;
+			margin-left: 4%;
+		}
+	}
+	&__img {
+		height: 22vw;
+		width: 38vw;
+		margin-left: 5%;
+		border-radius: 4px;
+		@include tablet {
+			height: 9vw;
+			width: 15vw;
+		}
+		@include desktop {
+			height: 5vw;
+			width: 8.4vw;
+		}
+	}
+	&__titles-container {
+		flex-direction: column;
+		width: 54%;
+		@include tablet {
+			width: 30%;
+		}
+		@include desktop {
+			width: 40%;
+		}
+	}
+	&__title {
+		margin: 0 0 6% 10%;
+		color: $darkgray;
+		font-weight: 600;
+		font-size: 0.9rem;
+		text-decoration: none;
+		@include tablet {
+			font-size: 1rem;
+			margin-bottom: 4%;
+			width: 80%;
+		}
+		@include desktop {
+			font-size: 0.85rem;
+		}
+	}
+	&__channel {
+		margin-top: 2%;
+		margin-left: 10%;
+		color: $darkgray;
+		font-weight: 400;
+		font-size: 0.8rem;
+		text-decoration: none;
+		@include tablet {
+			font-size: 0.85rem;
+		}
+		@include desktop {
+			font-size: 0.8rem;
+		}
+	}
+}

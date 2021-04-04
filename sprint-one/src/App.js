@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 //Compenents
 import Header from "./Components/Header/header";
@@ -32,14 +32,16 @@ class App extends React.Component {
 			<div className="App">
 				<Header />
 				<MainVideo CurrentVideo={this.state.CurrentVideo} />
-				<div>
-					<VideoInfo CurrentVideo={this.state.CurrentVideo} />
-					<CommentForm />
-					<CommentBuilder CurrentVideo={this.state.CurrentVideo} />
+				<div className="container-column">
+					<div className="main-column">
+						<VideoInfo CurrentVideo={this.state.CurrentVideo} />
+						<CommentForm />
+						<CommentBuilder CurrentVideo={this.state.CurrentVideo} />
+					</div>
+					<aside className="aside-column">
+						<VideoBuilder VideoList={this.state.VideoDetails} updateVideo={this.updateVideo} />{" "}
+					</aside>
 				</div>
-				<aside>
-					<VideoBuilder VideoList={this.state.VideoDetails} updateVideo={this.updateVideo} />{" "}
-				</aside>
 			</div>
 		);
 	}

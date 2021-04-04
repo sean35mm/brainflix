@@ -1,0 +1,158 @@
+@import "../../Partials/variables";
+@import "../../Partials/mixins";
+
+.header {
+	width: 100%;
+	margin-top: 2%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include tablet {
+		flex-direction: row;
+		margin-top: 0;
+		height: auto;
+		align-items: baseline;
+	}
+
+	@include desktop {
+		width: 80%;
+		margin-left: 10%;
+		height: 8vw;
+	}
+
+	&__logo-img {
+		width: 38vw;
+		margin-top: 3%;
+		@include tablet {
+			width: 16vw;
+			position: absolute;
+			top: 1%;
+			left: 3%;
+		}
+
+		@include desktop {
+			width: 8vw;
+			margin-left: 10%;
+			margin-top: 2.5%;
+		}
+	}
+	&__search-container {
+		position: relative;
+		width: 90%;
+		margin-top: 3%;
+		margin-right: 0.5%;
+		::placeholder {
+			color: $mostlywhite;
+			font-size: 0.9rem;
+			font-weight: 100;
+		}
+		@include tablet {
+			display: flex;
+			justify-content: flex-end;
+			left: 25%;
+		}
+		@include desktop {
+			left: 36%;
+			width: 80%;
+			margin-top: 0;
+			top: 0.5%;
+		}
+	}
+	&__search-container-magnify {
+		position: absolute;
+		left: 5%;
+		top: 30%;
+		width: 6vw;
+		@include tablet {
+			width: 2.5vw;
+			left: 32%;
+		}
+		@include desktop {
+			width: 1.5vw;
+			left: 48%;
+		}
+	}
+	&__search-container-input {
+		width: 85%;
+		height: 13vw;
+		padding-left: 15%;
+		border-radius: 4px;
+		border: solid 1px $darkgray;
+		background-color: $mostlywhite;
+		@include tablet {
+			width: 57%;
+			height: 5.5vw;
+		}
+		@include desktop {
+			width: 40%;
+			height: 3.2vw;
+			padding-left: 10%;
+			margin-right: 5%;
+		}
+	}
+	&__nav {
+		display: flex;
+		width: 100%;
+		@include tablet {
+			display: flex;
+			width: 100%;
+			justify-content: flex-end;
+			margin-right: 2%;
+		}
+	}
+	&__nav-upload {
+		width: 72%;
+		height: 15vw;
+		margin-top: 5.5%;
+		margin-left: 4.6%;
+		margin-right: 5%;
+		border-radius: 4px;
+		border: solid $brainflix-blue 0.25px;
+		background-color: $brainflix-blue;
+		resize: none;
+		color: white;
+		font-size: 0.9rem;
+		font-weight: 600;
+		@include tablet {
+			width: 27%;
+			height: 6vw;
+		}
+		@include desktop {
+			width: 20%;
+			height: 3.5vw;
+			font-size: 0.75rem;
+		}
+	}
+	&__nav-upload-img {
+		width: 5vw;
+		margin: 0 5% -0.5% 0;
+		@include tablet {
+			width: 2vw;
+			margin-bottom: -2%;
+		}
+		@include desktop {
+			width: 1vw;
+		}
+	}
+	&__nav-user-icon {
+		width: 14vw;
+		height: 14vw;
+		margin-top: 5.8%;
+		border-radius: 50%;
+		@include tablet {
+			width: 6vw;
+			height: 6vw;
+		}
+		@include desktop {
+			width: 4vw;
+			height: 4vw;
+			margin-top: 4.7%;
+		}
+	}
+}
+
+body {
+	font-family: $font;
+	margin: 0;
+}

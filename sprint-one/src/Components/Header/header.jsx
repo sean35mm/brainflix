@@ -4,22 +4,24 @@ import Magnifier from '../../Assets/Icons/Icon-search.svg';
 import Upload from '../../Assets/Icons/Icon-upload.svg';
 import Mohan from '../../Assets/Images/Mohan-muruge.jpg';
 
+import './header.scss';
+
 const Header = () => {
   return (
-    <div>
-      <a className="xx" href="./Header.jsx">
-        <img className="xx" src={Logo} alt="logo" />
+    <div className="header">
+      <a className="header__logo" href="./Header.jsx">
+        <img className="header__logo-img" src={Logo} alt="logo" />
       </a>
-      <form className="xx">
-          <img className="xx" src={Magnifier} alt="magnifier-icon" />
-          <input className="xx" placeholder="Search" />
+      <form className="header__search-container">
+          <img className="header__search-container-magnify" src={Magnifier} alt="magnifier-icon" />
+          <input className="header__search-container-input" placeholder="Search" />
       </form>
-      <div className="xx">
-        <button className="xx">
-          <img className="xx" src={Upload} alt="Upload button" />
+      <div className="header__nav">
+        <button className="header__nav-upload">
+          <img className="header__nav-upload-img" src={Upload} alt="Upload button" />
           UPLOAD
         </button>
-          <img className="xx" src={Mohan} alt="User Mohan badge" />
+          <img className="header__nav-user-icon" src={Mohan} alt="User Mohan badge" />
       </div>
     </div>
   )
