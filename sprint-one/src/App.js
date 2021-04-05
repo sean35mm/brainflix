@@ -13,6 +13,8 @@ import VideoInfo from "./Components/VideoInfo/VideoInfo";
 import VideoDetails from "./Data/video-details.json";
 import VideoList from "./Data/videos.json";
 
+//This is my only class component
+
 class App extends React.Component {
 	state = {
 		VideoDetails: VideoDetails,
