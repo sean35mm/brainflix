@@ -1,0 +1,23 @@
+@import "../src/Partials/mixins";
+@import "../src/Partials/variables";
+
+.container-column {
+	@include desktop {
+		display: flex;
+	}
+}
+
+.main-column {
+	@include desktop {
+		display: flex;
+		width: 60%;
+		flex-flow: wrap;
+	}
+}
+
+.aside-column {
+	@include desktop {
+		display: flex;
+		width: 40%;
+	}
+}
