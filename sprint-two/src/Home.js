@@ -17,7 +17,6 @@ class Home extends React.Component {
 		mainVideo: [],
 		comment: [],
 		videoList: [],
-		defaultVid: [],
 	};
 
 	componentDidMount() {
@@ -52,16 +51,18 @@ class Home extends React.Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		if (prevProps.match !== this.props.match) {
+		console.log(prevProps);
+		console.log(this.props.match);
+		if (prevProps.match.params.id !== this.props.match.params.id) {
 			axios
 				.get(
-					`https://project-2-api.herokuapp.com/videos/${this.props.match}?api_key=${apiKey}`
+					`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}?api_key=${apiKey}`
 				)
 				.then((res) => {
 					const mainVideo = res.data;
 					const comment = res.data.comments;
 					let aside = this.state.videoList.filter(
-						(video) => video.id !== this.props.match
+						(video) => video.id !== this.props.match.params.id
 					);
 					this.setState({
 						aside,
@@ -70,7 +71,6 @@ class Home extends React.Component {
 					});
 				});
 		}
-		//choosing not to use ternerary operator because I do not want to redeclare a certain variable
 	}
 
 	render() {

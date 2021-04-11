@@ -4,8 +4,9 @@ import LikesIcon from "../../assets/icons/Icon-likes.svg";
 import './VideoInfo.scss';
 
 const VideoInfo = ({vidInfo}) => {
-  vidInfo.map(obj => {
+  return vidInfo.map(obj => {
     const newDate = new Date(obj.timestamp);
+
     return (
       <div className="video-info" key={obj.id}>
         <h1 className="video-info__title">{obj.title}</h1>
@@ -31,11 +32,10 @@ const VideoInfo = ({vidInfo}) => {
         <p className="video-info__biography">{obj.description}</p>
       </div>
   
-    
-        
-    )
 
+    )
+  
   })
 }
 
-export default VideoInfo
+export default VideoInfo;
