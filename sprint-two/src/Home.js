@@ -69,6 +69,7 @@ class Home extends React.Component {
 						mainVideo: [mainVideo],
 						comment,
 					});
+					window.scrollTo(0, 0);
 				});
 		}
 	}
