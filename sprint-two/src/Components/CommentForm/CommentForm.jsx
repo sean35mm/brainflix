@@ -1,5 +1,5 @@
 import React from 'react';
-import Mohan from '../../Assets/Images/Mohan-muruge.jpg';
+import Mohan from '../../assets/images/Mohan-muruge.jpg';
 import './CommentForm.scss';
 
 const Comments = () => {

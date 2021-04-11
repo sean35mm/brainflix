@@ -1,24 +1,26 @@
 import React from 'react'; 
 import './VideoBuilder.scss';
+import { Link } from 'react-router-dom';
  
- const VideoBuilder = ({VideoList, updateVideo}) => { 
-   const videoList = VideoList.map((obj) => { 
+ const VideoBuilder = ({aside}) => { 
+   const videoList = aside.map((obj) => { 
      return ( 
-       <div key={obj.id} className="video-builder__container"> 
-         <div className="video-builder__imgbox">
-           <img 
-             src={obj.image} 
-             alt={obj.title}
-             className="video-builder__img" 
-             onClick= {() => updateVideo(obj)} 
-           /> 
-         </div> 
-        <div className="videoBuilder__titles-container"> 
-          <p className="video-builder__title">{obj.title}</p> 
-          <p className="video-builder__channel">{obj.channel}</p> 
-        </div> 
+       <Link to={`/video/${obj.id}`} div key={obj.id} className="video-builder__container"> 
+          <div className="video-builder__imgbox">
+            <img 
+              src={obj.image} 
+              alt={obj.title}
+              className="video-builder__img"  
+            /> 
+          </div> 
+         <div className="videoBuilder__titles-container"> 
+           <p className="video-builder__title">{obj.title}</p> 
+           <p className="video-builder__channel">{obj.channel}</p> 
+         </div>
+        </Link> 
+
      
-       </div> 
+       
      ); 
    });
    return (
@@ -30,4 +32,4 @@ import './VideoBuilder.scss';
    )
 }
 
-export default VideoBuilder
+export default VideoBuilder;

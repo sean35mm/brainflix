@@ -1,26 +1,29 @@
 import React from 'react';
-import Logo from '../../Assets/Logo/Logo-brainflix.svg';
-import Magnifier from '../../Assets/Icons/Icon-search.svg';
-import Upload from '../../Assets/Icons/Icon-upload.svg';
-import Mohan from '../../Assets/Images/Mohan-muruge.jpg';
+import {Link} from 'react-router-dom';
+import Logo from '../../assets/logo/Logo-brainflix.svg';
+import Magnifier from '../../assets/icons/Icon-search.svg';
+import Upload from '../../assets/icons/Icon-upload.svg';
+import Mohan from '../../assets/images/Mohan-muruge.jpg';
 
-import './header.scss';
+import '../Header/header.scss';
 
 const Header = () => {
   return (
     <div className="header">
-      <a className="header__logo" href="./Header.jsx">
+      <Link to="/" className="header__logo">
         <img className="header__logo-img" src={Logo} alt="logo" />
-      </a>
+      </Link>
       <form className="header__search-container">
           <img className="header__search-container-magnify" src={Magnifier} alt="magnifier-icon" />
           <input className="header__search-container-input" placeholder="Search" />
       </form>
       <div className="header__nav">
-        <button className="header__nav-upload">
-          <img className="header__nav-upload-img" src={Upload} alt="Upload button" />
-          UPLOAD
-        </button>
+        <Link to="/upload" className="header__nav-link">
+          <button className="header__nav-upload">
+            <img className="header__nav-upload-img" src={Upload} alt="Upload button" />
+            UPLOAD
+          </button>
+        </Link>
           <img className="header__nav-user-icon" src={Mohan} alt="User Mohan badge" />
       </div>
     </div>

@@ -1,47 +1,90 @@
 import React from "react";
-import "./App.scss";
+import "./Home.scss";
 import axios from "axios";
 
 //Compenents
-import Header from "./components/Header/header";
 import CommentForm from "./components/CommentForm/CommentForm";
 import MainVideo from "./components/MainVideo/MainVideo";
 import VideoBuilder from "./components/VideoBuilder/VideoBuilder";
 import CommentBuilder from "./components/CommentBuilder/CommentBuilder";
 import VideoInfo from "./components/VideoInfo/VideoInfo";
 
-//Data
-import VideoDetails from "./Data/video-details.json";
-import VideoList from "./Data/videos.json";
-
-//This is my only class component
+const apiKey = "15b07af5-71bb-4ad8-afe2-f9735eca952e";
 
 class Home extends React.Component {
 	state = {
-		VideoDetails: VideoDetails,
-		CurrentVideo: VideoDetails[0],
+		aside: [],
+		mainVideo: [],
+		comment: [],
+		videoList: [],
+		defaultVid: [],
 	};
 
-	updateVideo = (VideoDetails) => {
-		console.log(VideoDetails);
-		this.setState({
-			CurrentVideo: VideoDetails,
-		});
-	};
+	componentDidMount() {
+		//call axios here - *double check pod*
+		axios
+			.get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
+			.then((res) => {
+				const videoList = res.data;
+				const videoId = videoList[0].id;
+				axios
+					.get(
+						`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`
+					)
+					.then((res) => {
+						const aside = videoList.filter((video) => video.id !== videoId);
+						const mainVideo = res.data;
+						const comment = res.data.comments;
+						this.setState({
+							aside,
+							mainVideo: [mainVideo],
+							comment,
+							videoList,
+						});
+					})
+					.catch((err) => {
+						console.log(err);
+					});
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.match !== this.props.match) {
+			axios
+				.get(
+					`https://project-2-api.herokuapp.com/videos/${this.props.match}?api_key=${apiKey}`
+				)
+				.then((res) => {
+					const mainVideo = res.data;
+					const comment = res.data.comments;
+					let aside = this.state.videoList.filter(
+						(video) => video.id !== this.props.match
+					);
+					this.setState({
+						aside,
+						mainVideo: [mainVideo],
+						comment,
+					});
+				});
+		}
+		//choosing not to use ternerary operator because I do not want to redeclare a certain variable
+	}
 
 	render() {
 		return (
 			<div className="App">
-				<Header />
-				<MainVideo CurrentVideo={this.state.CurrentVideo} />
+				<MainVideo mainVideo={this.state.mainVideo} />
 				<div className="container-column">
 					<div className="main-column">
-						<VideoInfo CurrentVideo={this.state.CurrentVideo} />
+						<VideoInfo vidInfo={this.state.mainVideo} />
 						<CommentForm />
-						<CommentBuilder CurrentVideo={this.state.CurrentVideo} />
+						<CommentBuilder comment={this.state.comment} />
 					</div>
 					<aside className="aside-column">
-						<VideoBuilder VideoList={this.state.VideoDetails} updateVideo={this.updateVideo} />{" "}
+						<VideoBuilder aside={this.state.aside} />{" "}
 					</aside>
 				</div>
 			</div>

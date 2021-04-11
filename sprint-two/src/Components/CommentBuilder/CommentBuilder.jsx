@@ -2,9 +2,9 @@ import React from 'react';
 import './CommentBuilder.scss';
 
 
-const CommentBuilder = ({CurrentVideo}) => {
-  return CurrentVideo.comments.map((obj) => {
-    const newDate = new Date(CurrentVideo.timestamp);
+const CommentBuilder = ({comment}) => {
+  return comment.map((obj) => {
+    const newDate = new Date(obj.timestamp);
     return (
       <div className="comment-builder" key={obj.id}>
         <div className="comment-builder__container">
