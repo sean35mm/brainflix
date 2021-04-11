@@ -25,6 +25,7 @@ class Home extends React.Component {
 			.get(`https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`)
 			.then((res) => {
 				const videoList = res.data;
+				console.log(videoList);
 				const videoId = videoList[0].id;
 				axios
 					.get(

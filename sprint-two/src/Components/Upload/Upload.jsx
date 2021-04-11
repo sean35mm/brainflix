@@ -7,7 +7,7 @@ const Upload = (props) => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    alert('checking')
+    alert('Back to the home page')
     props.history.goBack()
     
   }

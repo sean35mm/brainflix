@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
               className="video-builder__img"  
             /> 
           </div> 
-         <div className="videoBuilder__titles-container"> 
+         <div className="video-builder__titles-container"> 
            <p className="video-builder__title">{obj.title}</p> 
            <p className="video-builder__channel">{obj.channel}</p> 
          </div>
