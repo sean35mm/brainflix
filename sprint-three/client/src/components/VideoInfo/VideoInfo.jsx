@@ -23,7 +23,7 @@ const VideoInfo = ({vidInfo}) => {
             </div>
             <div className="video-info__likes">
               <img src={LikesIcon} className="video-info__likes-img" alt="likes heart"/>
-              <p className="likes-count" className="video-info__likes-num">{obj.likes}</p>
+              <p className="likes-count video-info__likes-num">{obj.likes}</p>
             </div>
           </div>
         </div>

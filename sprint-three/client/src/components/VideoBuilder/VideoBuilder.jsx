@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
  const VideoBuilder = ({aside}) => { 
    const videoList = aside.map((obj) => { 
      return ( 
-       <Link to={`/video/${obj.id}`} div key={obj.id} className="video-builder__container"> 
+       <Link to={`/video/${obj.id}`} key={obj.id} className="video-builder__container"> 
           <div className="video-builder__imgbox">
             <img 
               src={obj.image} 

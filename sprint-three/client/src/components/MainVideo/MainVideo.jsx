@@ -5,7 +5,7 @@ const MainVideo = ({mainVideo}) => {
   return mainVideo.map((obj) => {
     
     return (
-      <div className="video">
+      <div className="video" key={obj.id}>
         <div className="video__container">
           <video className="video__hero" controls poster={obj.image}></video>
         </div>
