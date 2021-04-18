@@ -1,0 +1,172 @@
+@import "../../Partials/variables";
+@import "../../Partials/mixins";
+
+.video-info {
+	@include desktop {
+		margin-left: 15%;
+	}
+
+	&__title {
+		margin-left: 5%;
+		margin-bottom: 1%;
+		color: $darkgray;
+		font-size: 1.5rem;
+		@include tablet {
+			font-size: 2.2rem;
+			margin-left: 4.2%;
+		}
+		@include desktop {
+			font-size: 1.9rem;
+			margin-left: 3%;
+		}
+	}
+
+	&__info {
+		@include tablet {
+			display: flex;
+			width: 90%;
+			justify-content: space-between;
+		}
+		@include desktop {
+			width: 95%;
+		}
+	}
+
+	&__subtitle {
+		display: flex;
+		width: 55%;
+		margin-left: 5%;
+
+		@include tablet {
+			margin-top: 1.8%;
+		}
+		@include desktop {
+			margin-top: 0;
+			margin-left: 3.5%;
+			padding-top: 2.2%;
+		}
+	}
+
+	&__subtitle-author {
+		margin-right: 4%;
+		color: $darkgray;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-top: 3.5%;
+		margin-bottom: 3%;
+		min-width: 100px;
+
+		@include tablet {
+			margin-top: 0;
+		}
+		@include desktop {
+			font-size: 0.9rem;
+			margin-top: 0;
+		}
+	}
+
+	&__subtitle-date {
+		color: $gray;
+		font-size: 0.9rem;
+		margin-top: 4.5%;
+		margin-bottom: 3%;
+
+		@include tablet {
+			margin-top: 0.7%;
+			font-weight: 500;
+		}
+		@include desktop {
+			font-size: 0.8rem;
+			margin-top: 0.2%;
+		}
+	}
+
+	&__socials {
+		display: flex;
+		margin-left: 2%;
+
+		@include tablet {
+			margin-left: 0;
+			margin-right: 3%;
+		}
+	}
+
+	&__views {
+		display: flex;
+		margin-right: 10%;
+		color: $darkgray;
+		font-size: 0.9rem;
+		margin-bottom: 4%;
+	}
+
+	&__views-img {
+		margin-right: 7%;
+		@include desktop {
+			width: 1.7vw;
+			height: auto;
+		}
+	}
+
+	&__views-num {
+		@include desktop {
+			font-size: 0.8rem;
+			padding-top: 3%;
+		}
+	}
+
+	&__likes {
+		display: flex;
+		color: $darkgray;
+		font-size: 1rem;
+		margin-bottom: 4%;
+		padding-left: 12%;
+	}
+
+	&__likes-img {
+		margin-right: 7%;
+		@include tablet {
+			margin-left: 15%;
+		}
+		@include desktop {
+			width: 1.3vw;
+		}
+	}
+
+	&__likes-num {
+		font-size: 1rem;
+
+		@include desktop {
+			font-size: 0.8rem;
+			padding-top: 3.5%;
+		}
+	}
+
+	&__bottom-border {
+		width: 90%;
+		display: flex;
+		margin-left: 4.5%;
+		border-bottom: 1px solid $mostlywhite;
+		@include desktop {
+			width: 96.5%;
+			margin-left: 3.5%;
+		}
+	}
+	&__biography {
+		margin-left: 5.2%;
+		margin-right: 5.2%;
+		color: $darkgray;
+		font-size: 0.75rem;
+		line-height: 18px;
+		@include tablet {
+			width: 66%;
+			font-size: 0.85rem;
+			margin-left: 4.5%;
+			margin-top: 4%;
+		}
+		@include desktop {
+			font-size: 0.72rem;
+			width: 70%;
+			margin-left: 3.5%;
+		}
+	}
+}

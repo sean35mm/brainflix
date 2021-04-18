@@ -1,0 +1,197 @@
+@import "../../Partials/global";
+@import "../../Partials/mixins";
+
+.upload {
+	width: 100%;
+	margin-top: 2%;
+	border-top: 1px solid $verylightgray;
+	@include desktop {
+		margin-top: 0;
+	}
+	&__title {
+		color: $darkgray;
+		font-size: 1.5rem;
+		margin: 8% 0 10% 5%;
+		@include tablet {
+			font-size: 2.3rem;
+			margin: 5% 0 4% 4%;
+		}
+		@include desktop {
+			font-size: 1.85rem;
+			margin: 3% 0 2% 13%;
+		}
+	}
+	&__container {
+		@include tablet {
+			width: 93%;
+			margin-left: 0;
+		}
+		@include desktop {
+			border-top: 1px solid $verylightgray;
+			width: 77.5%;
+			margin-left: 13%;
+			display: flex;
+		}
+	}
+	&__border {
+		@include tablet {
+			border-top: 1px solid $verylightgray;
+			width: 100%;
+			margin-left: 3.5%;
+		}
+		@include desktop {
+			display: none;
+		}
+	}
+	&__thumbnail {
+		@include tablet {
+			width: 93%;
+			margin-left: 0;
+		}
+		@include desktop {
+			display: flex;
+			width: 30%;
+			flex-flow: wrap;
+			margin-right: 4%;
+		}
+	}
+	&__thumbnail-title {
+		font-size: 0.75rem;
+		color: $gray;
+		font-weight: 600;
+		margin-left: 5%;
+		margin-bottom: 2%;
+		@include tablet {
+			margin: 5% 0 1% 5.5%;
+		}
+		@include desktop {
+			margin: 10% 0 2% 0;
+		}
+	}
+	&__thumbnail-img {
+		width: 90vw;
+		border-radius: 4px;
+		margin: 0 0 5% 5%;
+		@include tablet {
+			width: 45vw;
+			margin-bottom: 3%;
+			margin-left: 5.5%;
+		}
+		@include desktop {
+			width: 26vw;
+			margin-left: 0;
+			margin-bottom: 12%;
+			box-sizing: border-box;
+		}
+	}
+	&__form {
+		::placeholder {
+			color: $darkgray;
+			padding-left: 5%;
+			padding-top: 4%;
+			font-family: $font;
+			@include tablet {
+				padding-top: 2%;
+				padding-left: 2%;
+			}
+			@include desktop {
+				display: flex;
+				width: 70%;
+			}
+		}
+	}
+	&__form-list {
+		padding: 0;
+		margin-left: 5%;
+	}
+	&__form-video-title {
+		@include inputLabel();
+		margin-bottom: 5%;
+		@include tablet {
+			margin-bottom: 3%;
+		}
+		@include desktop {
+			margin-top: 8.5%;
+		}
+	}
+	&__form-vid-input1 {
+		@include textInput();
+		height: 14vw;
+		@include tablet {
+			height: 6vw;
+			margin-top: 1%;
+		}
+		@include desktop {
+			width: 188%;
+			height: 3.5vw;
+			margin-top: 2%;
+			margin-bottom: 2%;
+		}
+	}
+	&__form-video-description {
+		@include inputLabel();
+		margin-bottom: 10%;
+		@include tablet {
+			margin-bottom: 5%;
+		}
+	}
+	&__form-vid-input2 {
+		@include textInput();
+		height: 45vw;
+		@include tablet {
+			height: 19vw;
+			margin-top: 1%;
+		}
+		@include desktop {
+			width: 188%;
+			height: 7vw;
+			margin-top: 2%;
+		}
+	}
+	&__button {
+		margin-left: 5%;
+		@include tablet {
+			display: flex;
+			flex-direction: row-reverse;
+			margin-bottom: 15%;
+			margin-left: 3.5%;
+			width: 93%;
+			border-top: 1px solid $verylightgray;
+		}
+		@include desktop {
+			width: 77.5%;
+			margin-left: 13%;
+		}
+	}
+	&__button-publish-container {
+		margin-bottom: 3%;
+		display: flex;
+		@include tablet {
+			margin-top: 5%;
+			margin-right: 1.5%;
+		}
+		@include desktop {
+			margin-top: 4%;
+			margin-right: 0;
+		}
+	}
+	&__button-publish {
+		@include buttonStyle();
+		background-color: $brainflix-blue;
+		color: white;
+	}
+	&__button-cancel-container {
+		display: flex;
+		@include tablet {
+			margin-top: 5%;
+		}
+		@include desktop {
+			margin-top: 4%;
+		}
+	}
+	&__button-cancel {
+		color: $brainflix-blue;
+		background-color: white;
+		@include buttonStyle();
+	}
+}

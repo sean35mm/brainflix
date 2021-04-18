@@ -1,0 +1,47 @@
+@import "../../Partials/global";
+
+.video {
+	width: 100%;
+	height: auto;
+	margin-top: 5%;
+	position: relative;
+
+	@include tablet {
+		margin-top: 2%;
+	}
+
+	@include desktop {
+		margin-top: 0;
+	}
+
+	&__container {
+		width: 100%;
+		height: auto;
+		position: relative;
+
+		@include tablet {
+			background-color: black;
+			height: 50vw;
+		}
+
+		@include desktop {
+			height: 36vw;
+		}
+	}
+
+	&__hero {
+		width: 100%;
+		height: auto;
+
+		@include tablet {
+			width: 90%;
+			height: 100%;
+			margin-left: 5%;
+		}
+
+		@include desktop {
+			width: 65%;
+			margin-left: 17.5%;
+		}
+	}
+}

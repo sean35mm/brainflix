@@ -1,0 +1,53 @@
+@mixin mobile {
+	@media screen and (min-width: $mobile-breakpoint) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media screen and (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+@mixin inputLabel {
+	list-style: none;
+	font-size: 0.75rem;
+	color: $gray;
+	font-weight: 600;
+}
+
+@mixin textInput {
+	box-sizing: border-box;
+	width: 90vw;
+	margin-top: 2%;
+	border-radius: 4px;
+	border: solid $verylightgray 1px;
+	background-color: $mostlywhite;
+	resize: none;
+}
+
+@mixin buttonStyle {
+	box-sizing: border-box;
+	width: 90vw;
+	height: 15vw;
+	font-size: 0.9rem;
+	font-weight: 600;
+	border-radius: 4px;
+	border: none;
+	@include tablet {
+		width: 21vw;
+		height: 6vw;
+	}
+	@include desktop {
+		width: 12vw;
+		height: 4vw;
+		margin-right: 0;
+	}
+}
