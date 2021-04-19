@@ -160,7 +160,8 @@
 		}
 		@include desktop {
 			width: 77.5%;
-			margin-left: 13%;
+			position: relative;
+			left: 353px;
 		}
 	}
 	&__button-publish-container {
