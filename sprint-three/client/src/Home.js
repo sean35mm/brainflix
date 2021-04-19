@@ -3,11 +3,11 @@ import "./Home.scss";
 import axios from "axios";
 
 //Compenents
-import CommentForm from "./components/CommentForm/CommentForm";
-import MainVideo from "./components/MainVideo/MainVideo";
-import VideoBuilder from "./components/VideoBuilder/VideoBuilder";
-import CommentBuilder from "./components/CommentBuilder/CommentBuilder";
-import VideoInfo from "./components/VideoInfo/VideoInfo";
+import CommentForm from "./Components/CommentForm/CommentForm";
+import MainVideo from "./Components/MainVideo/MainVideo";
+import VideoBuilder from "./Components/VideoBuilder/VideoBuilder";
+import CommentBuilder from "./Components/CommentBuilder/CommentBuilder";
+import VideoInfo from "./Components/VideoInfo/VideoInfo";
 
 const URL = "http://localhost:8080";
 

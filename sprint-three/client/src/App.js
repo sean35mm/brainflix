@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./Home";
-import Header from "./components/Header/header";
-import Upload from "./components/Upload/Upload";
+import Header from "./Components/Header/header";
+import Upload from "./Components/Upload/Upload";
 
 class App extends React.Component {
 	render() {
